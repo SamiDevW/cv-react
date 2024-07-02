@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Langues() {
+ 
     return (
         <div >
             <h2 className=' text-center w-auto bg-orange-600 rounded-xl'>Langues</h2>

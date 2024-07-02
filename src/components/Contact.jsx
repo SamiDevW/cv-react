@@ -15,7 +15,7 @@ export default function Contact() {
     }, [])
     return (
         <div>
-
+            
             {contact.length > 0 &&
                 <div>
                     <Profil nom={contact[0].nom} prenom={contact[0].prenom} />
