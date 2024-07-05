@@ -9,7 +9,7 @@
 }
 
 .secondaryBg {
-    background-color: lightgray;
+    border: solid 1px lightgray;
     padding: 10px;
     border-radius: 10px;
 }
@@ -23,5 +23,11 @@ td {
     border-collapse: collapse;
     border-radius: 10px;
 
+
+}
+
+h2 {
+    border: solid deepskyblue 2px;
+    color: deepskyblue;
 
 }

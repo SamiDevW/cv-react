@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from 'react-icons/ci'
 import { MdCancel, MdDelete } from 'react-icons/md'
 import { PiFloppyDiskBackBold } from 'react-icons/pi'
+import '../custom.css'
 const url = "https://cv-react-api.onrender.com/interets"
 export default function AdminInterets() {
     const [activity, setActivity] = useState('')
@@ -14,7 +15,7 @@ export default function AdminInterets() {
         setInterets(data)
 
     }
-    useState(() => {
+    useEffect(() => {
         fetchInterets();
     }, [])
     async function handleSave() {
@@ -53,7 +54,7 @@ export default function AdminInterets() {
     return (
         <div >
             <h2
-                className=' text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+                className=' text-center w-auto  rounded-xl mt-4 py-2'>
                 Centres d'interets
             </h2>
             <button

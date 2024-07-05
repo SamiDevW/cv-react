@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from 'react-icons/ci'
 import { MdCancel, MdDelete } from 'react-icons/md'
 import { PiFloppyDiskBackBold } from 'react-icons/pi'
+import '../custom.css'
 const url = "https://cv-react-api.onrender.com/langues"
 export default function AdminLangues() {
     const [name, setName] = useState('')
@@ -55,7 +56,7 @@ export default function AdminLangues() {
     return (
         <div>
 
-            <h2 className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+            <h2 className='text-center w-auto  rounded-xl mt-4 py-2'>
                 Langues
             </h2>
             <button
@@ -99,25 +100,23 @@ export default function AdminLangues() {
                 </button>
             </form>}
 
-            <table  >
+            <div  >
                 {langues && langues.map(item =>
 
-                    <tr className='secondaryBg' key={item._id} >
-                        <th>{item.name}:</th>
-                        <td>{item.level}</td>
+                    <tr className='secondaryBg w-full' key={item._id} >
+
+                        <td className='flex justify-between w-full'><span className='  font-bold'>{item.name}</span> : {item.level} <button
+                            onClick={() => handleDelete(item._id)}
+                            className='btn btn-error text-white my-1'>
+                            <MdDelete /></button></td>
                         {/* <td>{item._id}</td> */}
-                        <td>
-                            <button
-                                onClick={() => handleDelete(item._id)}
-                                className='btn btn-error text-white my-1'>
-                                <MdDelete /></button>
-                        </td>
+
 
                     </tr>
 
                 )}
 
-            </table>
+            </div>
         </div>
     )
 }

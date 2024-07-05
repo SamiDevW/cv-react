@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { PiFloppyDiskBackBold } from "react-icons/pi";
 import AdminProfil from './AdminProfil';
 import '../custom.css'
+const url = "https://cv-react-api.onrender.com/training"
 export default function AdminContact() {
     const [tel, setTel] = useState('')
     const [email, setEmail] = useState('')
@@ -26,7 +27,7 @@ export default function AdminContact() {
     function handleSumbit(e) {
         e.preventDefault()
         // console.log(tel, email, adresse);
-        fetch("http://localhost:3500/contact", {
+        fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json', // Set the content type to JSON
@@ -42,7 +43,7 @@ export default function AdminContact() {
         <div>
             <AdminProfil nom={nom} prenom={prenom} />
             <h2
-                className=' text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+                className=' text-center w-auto  rounded-xl mt-4 py-2'>
                 Contacts</h2>
             <form
                 className='  secondaryBg p-2 m-2 rounded-lg'

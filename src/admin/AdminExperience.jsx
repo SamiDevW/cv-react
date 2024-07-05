@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from 'react-icons/ci'
 import { MdCancel, MdDelete } from 'react-icons/md'
 import { PiFloppyDiskBackBold } from 'react-icons/pi'
+import '../custom.css'
 const url = "https://cv-react-api.onrender.com/experience"
 export default function AdminExperience() {
   const [experiences, setExperiences] = useState([])
@@ -70,7 +71,7 @@ export default function AdminExperience() {
   return (
     <div>
       <h2
-        className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+        className='text-center w-auto  rounded-xl mt-4 py-2'>
         Experiences profesionelles
       </h2>
       <button

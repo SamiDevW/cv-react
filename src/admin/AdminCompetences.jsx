@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { PiFloppyDiskBackBold } from "react-icons/pi";
 import { MdCancel } from "react-icons/md";
 import { enqueueSnackbar } from "notistack";
-
+import '../custom.css'
 const url = 'https://cv-react-api.onrender.com/competence'
 export default function AdminCompetences() {
   const [competences, setCompetences] = useState('')
@@ -85,7 +85,7 @@ export default function AdminCompetences() {
     <div>
       <div >
         <h2
-          className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+          className='text-center w-auto  rounded-xl mt-4 py-2'>
           Competences</h2>
         <button
           className='btn btn-outline btn-info my-1'

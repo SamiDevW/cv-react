@@ -1,29 +1,45 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+const url = "https://cv-react-api.onrender.com/training"
 export default function Formation() {
-    const formations = [{
-        year: 2000,
-        establisement: "stanford",
-        diplome: 'master'
-    }, {
-        year: 2000,
-        establisement: "stanford",
-        diplome: 'master'
-    }, {
-        year: 2000,
-        establisement: "stanford",
-        diplome: 'master'
-    }]
-    console.log(formations[0].establisement);
+    const [trainings, setTrainings] = useState([])
+    async function fetchTrainings() {
+        try {
+            const response = await fetch(url)
+            if (response.ok) {
+                const data = await response.json()
+                console.log(data);
+                setTrainings(data)
+            }
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+    useEffect(() => {
+        fetchTrainings();
+
+    }, [])
     return (
         <div className=''>
-            <h2 className='text-center w-auto bg-orange-600 rounded-xl'>Formations</h2>
-            {formations && formations.map((x, index) => (
-                <div key={index} className='mb-4'>
-                    <p>Année: <span>{x.year}</span></p>
-                    <p>Etablissement: <span>{x.establisement}</span></p>
-                    <p>Diplome: <span>{x.diplome}</span></p>
+            {trainings && trainings.map((x) => (
+                <div
+                    key={x._id}
+                    className='mb-2 secondaryBg  '>
+                    <tr>
+                        <th>Année: </th>
+                        <td>{x.year}</td>
+                    </tr>
+                    <tr>
+                        <th>Etablissement: </th>
+                        <td>{x.establishment}</td>
+                    </tr>
+                    <tr>
+                        <th>Diplome: </th>
+                        <td>{x.degree}</td>
+                    </tr>
+
                 </div>
+
             ))}
         </div>
     );
