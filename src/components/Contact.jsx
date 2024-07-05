@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Profil from './Profil'
-const BASE_URL = "http://localhost:3500"
+const BASE_URL = "https://cv-react-api.onrender.com"
 export default function Contact() {
     const [contact, setContact] = useState([])
     async function getContact() {
@@ -15,7 +15,7 @@ export default function Contact() {
     }, [])
     return (
         <div>
-            
+
             {contact.length > 0 &&
                 <div>
                     <Profil nom={contact[0].nom} prenom={contact[0].prenom} />

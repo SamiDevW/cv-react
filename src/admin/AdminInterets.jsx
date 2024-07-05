@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { CiCirclePlus } from 'react-icons/ci'
 import { MdCancel, MdDelete } from 'react-icons/md'
 import { PiFloppyDiskBackBold } from 'react-icons/pi'
-const url = "http://localhost:3500/interets"
+const url = "https://cv-react-api.onrender.com/interets"
 export default function AdminInterets() {
     const [activity, setActivity] = useState('')
     const [interets, setInterets] = useState([])
@@ -52,26 +52,42 @@ export default function AdminInterets() {
     }
     return (
         <div >
-            <h2 className=' text-center w-auto bg-orange-600 rounded-xl'>Centres d'interets</h2>
-            <button className='btn btn-outline btn-info my-1' onClick={addActivity}><CiCirclePlus size={24} /></button>
+            <h2
+                className=' text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+                Centres d'interets
+            </h2>
+            <button
+                className='btn btn-outline btn-info my-1'
+                onClick={addActivity}>
+                <CiCirclePlus size={24} />
+            </button>
             {isAdd && <div className='flex'>
 
                 <input
-                    className="input input-bordered input-primary w-full"
+                    className=" customInput input input-bordered input-primary w-full"
                     type="text"
                     value={activity}
                     onChange={(e) => setActivity(e.target.value)}
 
                 />
-                <button className="btn btn-outline btn-success my-1" onClick={handleSave}><PiFloppyDiskBackBold /></button>
-                <button className='btn btn-outline btn-error my-1' onClick={handleCancel}><MdCancel /></button>
+                <button
+                    className="btn btn-outline btn-success my-1"
+                    onClick={handleSave}>
+                    <PiFloppyDiskBackBold />
+                </button>
+                <button className='btn btn-outline btn-error my-1' onClick={handleCancel}>
+                    <MdCancel />
+                </button>
 
             </div>}
             {interets && interets.map(item =>
-                <div className='flex gap-9'>
+                <div className='secondaryBg  flex justify-between  items-center gap-9'>
                     <p>{item.activity} </p>
-                    <p>{item._id} </p>
-                    <button onClick={() => { handleDelete(item._id) }} className='btn btn-error text-white my-1'><MdDelete /></button>
+                    {/* <p>{item._id} </p> */}
+                    <button onClick={() => { handleDelete(item._id) }}
+                        className='btn btn-error text-white my-1'>
+                        <MdDelete />
+                    </button>
 
                 </div>)}
         </div>

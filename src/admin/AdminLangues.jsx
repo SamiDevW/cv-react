@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { CiCirclePlus } from 'react-icons/ci'
 import { MdCancel, MdDelete } from 'react-icons/md'
 import { PiFloppyDiskBackBold } from 'react-icons/pi'
-const url = "http://localhost:3500/langues"
+const url = "https://cv-react-api.onrender.com/langues"
 export default function AdminLangues() {
     const [name, setName] = useState('')
     const [level, setLevel] = useState('')
@@ -55,11 +55,19 @@ export default function AdminLangues() {
     return (
         <div>
 
-            <h2 className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>Langues</h2>
-            <button className='btn btn-outline btn-info my-1' onClick={addLangue}><CiCirclePlus size={24} /></button>
-            {isAdd && <form className='flex' onSubmit={handleSubmit}>
+            <h2 className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+                Langues
+            </h2>
+            <button
+                className='btn btn-outline btn-info my-1'
+                onClick={addLangue}>
+                <CiCirclePlus size={24} />
+            </button>
+            {isAdd && <form
+                className='flex'
+                onSubmit={handleSubmit}>
                 <input
-                    className="input input-bordered input-primary w-full"
+                    className="customInput input input-bordered input-primary w-full"
                     type="text"
                     onChange={(e) => setName(e.target.value)}
 
@@ -72,25 +80,40 @@ export default function AdminLangues() {
 
                 /> */}
                 <select
-                    className='select select-secondary w-full max-w-xs'
+                    className='customInput select select-secondary w-full max-w-xs'
                     onChange={(e) => setLevel(e.target.value)}>
                     <option value="Débutant">Débutant</option>
                     <option value="Intermediaire">Intermediaire</option>
                     <option value="Avancé">Avancé</option>
                     <option value="Maternel">Maternel</option>
                 </select>
-                <button className='btn btn-outline btn-success my-1' title='save'><PiFloppyDiskBackBold /></button>
-                <button className='btn btn-outline btn-error my-1' onClick={handleCancel}><MdCancel /></button>
+                <button
+                    className='btn btn-outline btn-success my-1'
+                    title='save'>
+                    <PiFloppyDiskBackBold />
+                </button>
+                <button
+                    className='btn btn-outline btn-error my-1'
+                    onClick={handleCancel}>
+                    <MdCancel />
+                </button>
             </form>}
 
             <table  >
-                {langues && langues.map(item => <tr className='flex  justify-between' key={item._id} >
-                    <th>{item.name} : </th>
-                    <td>{item.level}</td>
-                    <td>{item._id}</td>
-                    <td><button onClick={() => handleDelete(item._id)} className='btn btn-error text-white my-1'><MdDelete /></button></td>
+                {langues && langues.map(item =>
 
-                </tr>
+                    <tr className='secondaryBg' key={item._id} >
+                        <th>{item.name}:</th>
+                        <td>{item.level}</td>
+                        {/* <td>{item._id}</td> */}
+                        <td>
+                            <button
+                                onClick={() => handleDelete(item._id)}
+                                className='btn btn-error text-white my-1'>
+                                <MdDelete /></button>
+                        </td>
+
+                    </tr>
 
                 )}
 

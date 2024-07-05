@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { PiFloppyDiskBackBold } from "react-icons/pi";
 import AdminProfil from './AdminProfil';
-
+import '../custom.css'
 export default function AdminContact() {
     const [tel, setTel] = useState('')
     const [email, setEmail] = useState('')
@@ -10,7 +10,7 @@ export default function AdminContact() {
     const [nom, setNom] = useState('')
     const [prenom, setPrenom] = useState('')
     async function fetchContact() {
-        const response = await fetch("http://localhost:3500/contact")
+        const response = await fetch("https://cv-react-api.onrender.com/contact")
         const data = await response.json()
         console.log(data);
 
@@ -41,13 +41,17 @@ export default function AdminContact() {
     return (
         <div>
             <AdminProfil nom={nom} prenom={prenom} />
-            <h2 className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>Contacts</h2>
-            <form onSubmit={handleSumbit}>
+            <h2
+                className=' text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+                Contacts</h2>
+            <form
+                className='  secondaryBg p-2 m-2 rounded-lg'
+                onSubmit={handleSumbit}>
 
-                <div className=''>
+                <div >
                     <label>Tel</label>
                     <input
-                        className="input input-bordered input-primary w-full"
+                        className=" customInput input input-bordered input-primary  w-full"
                         type="text"
                         value={tel}
                         onChange={(e) => setTel(e.target.value)} />
@@ -55,7 +59,7 @@ export default function AdminContact() {
                 <div className=''>
                     <label>Email</label>
                     <input
-                        className="input input-bordered input-primary w-full"
+                        className=" customInput input input-bordere input-primary w-full"
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)} />
@@ -63,12 +67,15 @@ export default function AdminContact() {
                 <div className=''>
                     <label>Adresse</label>
                     <input
-                        className="input input-bordered input-primary w-full"
+                        className="customInput input input-bordered  input-primary w-full"
                         type="text"
                         value={adresse}
                         onChange={(e) => setAdresse(e.target.value)} />
                 </div>
-                <button className='btn btn-outline btn-success my-1' title='save'><PiFloppyDiskBackBold /></button>
+                <button
+                    className='btn btn-outline btn-success my-1'
+                    title='save'><PiFloppyDiskBackBold />
+                </button>
             </form>
         </div>
     )

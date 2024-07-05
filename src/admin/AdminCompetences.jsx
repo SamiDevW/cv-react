@@ -6,7 +6,7 @@ import { PiFloppyDiskBackBold } from "react-icons/pi";
 import { MdCancel } from "react-icons/md";
 import { enqueueSnackbar } from "notistack";
 
-const url = 'http://localhost:3500/competence'
+const url = 'https://cv-react-api.onrender.com/competence'
 export default function AdminCompetences() {
   const [competences, setCompetences] = useState('')
   const [skill, setSkill] = useState('')
@@ -84,21 +84,31 @@ export default function AdminCompetences() {
   return (
     <div>
       <div >
-        <h2 className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>Competences</h2>
-        <button className='btn btn-outline btn-info my-1' onClick={addSkill}>
+        <h2
+          className='text-center w-auto bg-orange-600 rounded-xl mt-4 py-2'>
+          Competences</h2>
+        <button
+          className='btn btn-outline btn-info my-1'
+          onClick={addSkill}>
           <CiCirclePlus size={24} />
         </button>
         {isAdd && <div>
 
 
           <div className="flex gap-2">
-            <input className="input input-bordered input-primary w-full my-1"
+            <input className="customInput input input-bordered input-primary w-full my-1"
               type="text"
               value={skill}
               onChange={(e) => setSkill(e.target.value)}
             />
-            <button className="btn btn-outline btn-success my-1" onClick={handleSave}><PiFloppyDiskBackBold /></button>
-            <button className='btn btn-outline btn-error my-1' onClick={handleCancel}><MdCancel /></button>
+            <button
+              className="btn btn-outline btn-success my-1"
+              onClick={handleSave}><PiFloppyDiskBackBold />
+            </button>
+            <button
+              className='btn btn-outline btn-error my-1'
+              onClick={handleCancel}><MdCancel />
+            </button>
           </div>
         </div>}
 
@@ -106,13 +116,17 @@ export default function AdminCompetences() {
 
       <div >
         {competences && competences.map(item =>
-          <div className='flex justify-between items-center' key={item._id}>
+          <div className='secondaryBg flex items-center gap-9 justify-between' key={item._id}>
             <p>{item.skill}  </p>
-            <p>{item._id}  </p>
-            <button onClick={() => { handleDelete(item._id) }} className='btn btn-error text-white my-1'><MdDelete /></button>
+            {/* <p>{item._id}  </p> */}
+            <button
+              onClick={() => { handleDelete(item._id) }}
+              className='btn btn-error text-white my-1'><MdDelete />
+            </button>
           </div>)}
       </div>
 
     </div>
   )
 }
+
