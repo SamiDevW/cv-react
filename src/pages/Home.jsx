@@ -8,18 +8,20 @@ import Formation from '../components/Formation'
 import RingLoader from "react-spinners/RingLoader";
 const url = "https://cv-react-api.onrender.com/contact"
 export default function Home() {
-    const [data, setData] = useState([])
+
     async function isData() {
         const response = fetch(url)
         if (response.ok) {
-            setData(response)
+            const tab = await (await response).json()
+            return tab
+
         }
 
     }
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         setLoading(true)
-        isData()
+        const data = isData()
         if (data) {
             setLoading(false)
         }
@@ -45,7 +47,7 @@ export default function Home() {
                         />
                     </div>
                     :
-                    <div className='gradBg text-white flex flex-col '>
+                    <div className='gradBg text-black flex flex-col '>
                         <section className=' '>
                             <Contact />
                         </section>
