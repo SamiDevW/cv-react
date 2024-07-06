@@ -11,7 +11,7 @@ import AdminFormation from '../admin/AdminFormation'
 export default function Admin() {
     const [userName, setUserName] = useState('')
     const [pwd, setPwd] = useState('')
-    const [isLogged, setIsLogged] = useState(true)
+    const [isLogged, setIsLogged] = useState(false)
     function handleSubmit(e) {
         e.preventDefault()
         if (userName === 'ok' && pwd === 'ok') {
@@ -30,16 +30,20 @@ export default function Admin() {
         )
     }
     return (
-        <div className='bg-white text-black flex '>
-            <section className='ml-3 w-1/4'>
+        <div className='gradBg text-black flex flex-col '>
+            <section className=''>
                 <AdminContact />
-                <AdminCompetences />
-                <AdminLangues />
-                <AdminInterets />
             </section>
-            <section className='ml-3 w-3/4 mr-3'>
-                <AdminExperience />
-                <AdminFormation />
+            <section className='flex'>
+                <section className='  ml-3 secondaryBg w-1/4 p-1  rounded-lg h-fit'>
+                    <AdminCompetences />
+                    <AdminLangues />
+                    <AdminInterets />
+                </section>
+                <section className='  ml-3 w-3/4 mr-3'>
+                    <AdminFormation />
+                    <AdminExperience />
+                </section>
             </section>
 
         </div>

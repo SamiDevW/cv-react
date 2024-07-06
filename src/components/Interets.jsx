@@ -14,7 +14,7 @@ export default function Interets() {
     return (
         <div>
             <h2
-                className=' text-center w-auto  rounded-xl mt-4 py-2'>
+                className=' text-center w-auto leftBar  mt-4 py-2'>
                 Centres d'interets
             </h2>
             <div >

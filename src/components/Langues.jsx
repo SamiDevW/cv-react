@@ -16,14 +16,14 @@ export default function Langues() {
     return (
 
         <div >
-            <h2 className='text-center w-auto  rounded-xl mt-4 py-2'>
+            <h2 className='leftBar text-center w-auto   mt-4 py-2'>
                 Langues
             </h2>
             <div  >
                 {langues && langues.map(item =>
-                    <tr className='secondaryBg w-full' key={item._id} >
-                        <td className='flex justify-between w-full'><span className='  font-bold'>{item.name}</span> : {item.level} </td>
-                    </tr>
+                    <p className='flex secondaryBg  items-center'>
+                        <span className=' w-full '><strong>{item.name}</strong>: {item.level}</span>
+                    </p>
                 )}
 
             </div>

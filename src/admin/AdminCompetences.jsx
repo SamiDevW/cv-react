@@ -85,7 +85,7 @@ export default function AdminCompetences() {
     <div>
       <div >
         <h2
-          className='text-center w-auto  rounded-xl mt-4 py-2'>
+          className='leftBar text-center w-auto  mt-4 py-2'>
           Competences</h2>
         <button
           className='btn btn-outline btn-info my-1'

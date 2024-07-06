@@ -24,7 +24,7 @@ export default function Profesionelle() {
     return (
         <div className=''>
             <h2
-                className='text-center w-auto  rounded-xl mt-4 py-2'>
+                className='rightBar text-center w-auto py-2'>
                 Experiences profesionelles
             </h2>
             <div>

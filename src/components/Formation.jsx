@@ -21,6 +21,10 @@ export default function Formation() {
     }, [])
     return (
         <div className=''>
+            <h2
+                className=' rightBar text-center w-auto   mt-4 py-2'>
+                Formations
+            </h2>
             {trainings && trainings.map((x) => (
                 <div
                     key={x._id}

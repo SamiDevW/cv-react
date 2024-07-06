@@ -56,7 +56,7 @@ export default function AdminLangues() {
     return (
         <div>
 
-            <h2 className='text-center w-auto  rounded-xl mt-4 py-2'>
+            <h2 className='leftBar text-center w-auto   mt-4 py-2'>
                 Langues
             </h2>
             <button
@@ -100,19 +100,21 @@ export default function AdminLangues() {
                 </button>
             </form>}
 
-            <div  >
+            <div className=' mb-2 w-full' >
                 {langues && langues.map(item =>
 
-                    <tr className='secondaryBg w-full' key={item._id} >
+                    <div className=' mb-2 w-full  ' key={item._id} >
 
-                        <td className='flex justify-between w-full'><span className='  font-bold'>{item.name}</span> : {item.level} <button
-                            onClick={() => handleDelete(item._id)}
-                            className='btn btn-error text-white my-1'>
-                            <MdDelete /></button></td>
+                        <p className='flex secondaryBg  items-center'>
+                            <span className=' w-full '><strong>{item.name}</strong>: {item.level}</span>
+                            <button
+                                onClick={() => handleDelete(item._id)}
+                                className='btn btn-error text-white my-1 self-end'>
+                                <MdDelete /></button></p>
                         {/* <td>{item._id}</td> */}
 
 
-                    </tr>
+                    </div>
 
                 )}
 

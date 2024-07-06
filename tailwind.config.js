@@ -7,7 +7,10 @@ module.exports = {
 
     extend: {
       colors: {
-        lightGray: '#f0f0f0'
+        myBg: 'rgba(255,255,255,0.92)',
+        myTxt: '#777',
+        myContact: '#F7E0C1',
+
       },
     },
 

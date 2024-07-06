@@ -54,7 +54,7 @@ export default function AdminInterets() {
     return (
         <div >
             <h2
-                className=' text-center w-auto  rounded-xl mt-4 py-2'>
+                className=' leftBar text-center w-auto   mt-4 py-2'>
                 Centres d'interets
             </h2>
             <button

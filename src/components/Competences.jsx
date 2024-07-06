@@ -17,7 +17,7 @@ export default function Competences() {
         <div>
 
             <h2
-                className='text-center w-auto  rounded-xl mt-4 py-2'>
+                className='leftBar text-center w-auto  mt-4 py-2'>
                 Competences</h2>
             <div >
                 {competences && competences.map(item =>

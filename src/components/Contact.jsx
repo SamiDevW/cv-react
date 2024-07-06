@@ -24,33 +24,19 @@ export default function Contact() {
         fetchContact()
     }, [])
     return (
-        <div>
-
+        <div className='p-2'>
             {data.length > 0 &&
-                <div>
+                <div className='flex justify-between'>
                     <Profil nom={nom} prenom={prenom} />
-                    <h2
-                        className=' text-center w-auto  rounded-xl mt-4 p-2'>
-                        Contacts</h2>
-                    <div>
-                        <tr>
-                            <th>TEL:</th>
-                            <td>{tel}</td>
-                        </tr>
-                        <tr>
-                            <th>Email:</th>
-                            <td>{email}</td>
-                        </tr>
-                        <tr>
-                            <th>Adresse:</th>
-                            <td>{adresse}</td>
-                        </tr>
-
+                    <div className='flex flex-col h-full  content-center'>
+                        <div>
+                            <p>{tel}</p>
+                            <p>{email}</p>
+                            <p>{adresse}</p>
+                        </div>
                     </div>
                 </div>
             }
-
-
         </div>
 
     )

@@ -40,13 +40,11 @@ export default function AdminContact() {
 
     }
     return (
-        <div>
+        <div className='flex justify-between'>
             <AdminProfil nom={nom} prenom={prenom} />
-            <h2
-                className=' text-center w-auto  rounded-xl mt-4 py-2'>
-                Contacts</h2>
+
             <form
-                className='  secondaryBg p-2 m-2 rounded-lg'
+                className=' flex flex-col h-full  content-center secondaryBg p-2 m-2 rounded-lg'
                 onSubmit={handleSumbit}>
 
                 <div >

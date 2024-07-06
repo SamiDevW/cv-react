@@ -41,6 +41,10 @@ export default function AdminFormation() {
                 const data = await response.json()
                 console.log(data);
                 fetchTrainings()
+                setYear('')
+                setEstablishment('')
+                setDegree('')
+
             }
         } catch (error) {
             console.log(error);
@@ -71,7 +75,7 @@ export default function AdminFormation() {
     return (
         <div className=''>
             <h2
-                className='text-center w-auto  rounded-xl mt-4 py-2'>
+                className='rightBar text-center w-auto   mt-4 py-2'>
                 Formations
             </h2>
             <button
@@ -87,16 +91,19 @@ export default function AdminFormation() {
                     <input type="text"
                         className='customInput input input-bordered input-primary'
                         placeholder='Insert the year...'
+                        value={year}
                         onChange={(e) => { setYear(e.target.value) }}
                     />
                     <input type="text"
                         className='customInput input input-bordered input-primary'
                         placeholder='Insert establishment name...'
+                        value={establishment}
                         onChange={(e) => { setEstablishment(e.target.value) }}
                     />
                     <input type="text"
                         className='customInput input input-bordered input-primary'
                         placeholder='Insert the degree...'
+                        value={degree}
                         onChange={(e) => { setDegree(e.target.value) }}
                     />
                 </div>

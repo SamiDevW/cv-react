@@ -41,7 +41,12 @@ export default function AdminExperience() {
       if (response.ok) {
         const data = await response.json()
         console.log(data);
+        setYear('')
+        setCompany('')
+        setMission('')
         fetchExperiences()
+
+
       }
     } catch (error) {
       console.log(error);
@@ -71,7 +76,7 @@ export default function AdminExperience() {
   return (
     <div>
       <h2
-        className='text-center w-auto  rounded-xl mt-4 py-2'>
+        className='rightBar text-center w-auto  mt-4 py-2'>
         Experiences profesionelles
       </h2>
       <button
@@ -86,16 +91,19 @@ export default function AdminExperience() {
           <input type="text"
             className='customInput input input-bordered input-primary'
             placeholder='Insert the year...'
+            value={year}
             onChange={(e) => { setYear(e.target.value) }}
           />
           <input type="text"
             className='customInput input input-bordered input-primary'
             placeholder='Insert company name...'
+            value={company}
             onChange={(e) => { setCompany(e.target.value) }}
           />
           <input type="text"
             className='customInput input input-bordered input-primary'
             placeholder='Insert the description...'
+            value={mission}
             onChange={(e) => { setMission(e.target.value) }}
           />
         </div>
