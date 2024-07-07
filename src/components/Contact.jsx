@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Profil from './Profil'
+import { Link } from 'react-router-dom';
 const url = "https://cv-react-api.onrender.com"
 export default function Contact() {
     const [data, setData] = useState([])
@@ -25,9 +26,16 @@ export default function Contact() {
     }, [])
     return (
         <div className='p-2'>
+            <div className='flex justify-end' >
+                <button title='Log in to modify the CV' className='btn btn-outline btn-success my-1  font-bold '>
+                    <Link to="/admin">LOGIN</Link>
+                </button>
+            </div>
             {data.length > 0 &&
                 <div className='flex justify-between'>
+
                     <Profil nom={nom} prenom={prenom} />
+
                     <div className='flex flex-col h-full  content-center'>
                         <div>
                             <p>{tel}</p>
@@ -37,6 +45,7 @@ export default function Contact() {
                     </div>
                 </div>
             }
+
         </div>
 
     )

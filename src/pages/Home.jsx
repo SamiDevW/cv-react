@@ -6,29 +6,28 @@ import Interets from '../components/Interets'
 import Profesionelle from '../components/Profesionelle'
 import Formation from '../components/Formation'
 import RingLoader from "react-spinners/RingLoader";
+
+
 const url = "https://cv-react-api.onrender.com/contact"
 export default function Home() {
-
-    async function isData() {
-        const response = fetch(url)
-        if (response.ok) {
-            const tab = await (await response).json()
-            return tab
-
-        }
-
-    }
-    const [loading, setLoading] = useState(false)
-    useEffect(() => {
-        setLoading(true)
-        const data = isData()
-        if (data) {
-            setLoading(false)
-        }
-
-
-    }, [])
     const color = 'white'
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+
+    useEffect(() => {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                setData(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                setLoading(false);
+            });
+    }, []);
+
     return (
         // if loading is true "loading ?"  then do what is after ':'
         <div>
@@ -47,12 +46,13 @@ export default function Home() {
                         />
                     </div>
                     :
-                    <div className='gradBg text-black flex flex-col '>
+
+                    <div className='gradBg text-black flex flex-col'>
+
                         <section className=' '>
                             <Contact />
                         </section>
                         <div className='flex'>
-
                             <section className='  ml-3 secondaryBg w-1/4 p-1  rounded-lg h-fit'>
                                 <Competences />
                                 <Langues />
