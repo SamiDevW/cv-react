@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { MdSportsSoccer } from "react-icons/md";
 const url = "https://cv-react-api.onrender.com/interets"
 export default function Interets() {
     const [interets, setInterets] = useState([])
@@ -14,8 +15,8 @@ export default function Interets() {
     return (
         <div>
             <h2
-                className=' text-center w-auto leftBar  mt-4 py-2'>
-                Centres d'interets
+                className=' text-center w-auto leftBar flex justify-around items-center gap-2  mt-4 py-2'>
+                Centres d'interets <MdSportsSoccer />
             </h2>
             <div >
                 {interets && interets.map(item =>

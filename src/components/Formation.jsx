@@ -22,23 +22,21 @@ export default function Formation() {
     return (
         <div className=''>
             <h2
-                className=' rightBar text-center w-auto   mt-4 py-2'>
+                className='rightTitles  mt-4 py-2'>
                 Formations
             </h2>
             {trainings && trainings.map((x) => (
                 <div
                     key={x._id}
-                    className='mb-2 secondaryBg  '>
+                    className=' careerBlock'>
                     <tr>
-                        <th>Année: </th>
+                        <td className='font-bold'>{x.establishment}</td>
+                    </tr>
+                    <tr>
                         <td>{x.year}</td>
                     </tr>
+
                     <tr>
-                        <th>Etablissement: </th>
-                        <td>{x.establishment}</td>
-                    </tr>
-                    <tr>
-                        <th>Diplome: </th>
                         <td>{x.degree}</td>
                     </tr>
 

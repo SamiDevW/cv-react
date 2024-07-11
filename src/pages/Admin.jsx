@@ -14,7 +14,7 @@ export default function Admin() {
     const [isLogged, setIsLogged] = useState(false)
     function handleSubmit(e) {
         e.preventDefault()
-        if (userName === 'ok' && pwd === 'ok') {
+        if (userName === localStorage.getItem('username') && pwd === localStorage.getItem('password')) {
             setIsLogged(true)
         }
     }
@@ -31,16 +31,16 @@ export default function Admin() {
     }
     return (
         <div className='gradBg text-black flex flex-col '>
-            <section className=''>
+            <section className='contactBlock  border-gray-900 border-2 p-2 m-2'>
                 <AdminContact />
             </section>
             <section className='flex'>
-                <section className='  ml-3 secondaryBg w-1/4 p-1  rounded-lg h-fit'>
+                <section className='leftBlock   ml-3  w-1/4 p-1  rounded-lg h-fit'>
                     <AdminCompetences />
                     <AdminLangues />
                     <AdminInterets />
                 </section>
-                <section className='  ml-3 w-3/4 mr-3'>
+                <section className='rightBlock  ml-3 w-3/4 mr-3'>
                     <AdminFormation />
                     <AdminExperience />
                 </section>

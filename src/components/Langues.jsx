@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { FaLanguage } from "react-icons/fa6";
 import '../custom.css'
 const url = "https://cv-react-api.onrender.com/langues"
 export default function Langues() {
@@ -16,8 +17,8 @@ export default function Langues() {
     return (
 
         <div >
-            <h2 className='leftBar text-center w-auto   mt-4 py-2'>
-                Langues
+            <h2 className='leftBar text-center w-auto flex justify-around items-center gap-2   mt-4 py-2'>
+                Langues <FaLanguage size={26} />
             </h2>
             <div  >
                 {langues && langues.map(item =>

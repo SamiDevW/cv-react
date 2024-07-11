@@ -1,58 +1,114 @@
 .customInput {
-    background-color: lightgray;
+    background-color: rgb(199, 244, 255);
     color: black;
     margin: 5px 0;
+}
+
+h2 {
+
+    background-color: #3f0fec;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .customHeader {
     border-radius: 0;
 }
 
+/* left block elements */
 .secondaryBg {
-    border: solid 1px rgba(211, 211, 211, 0.358);
     padding: 10px;
-    box-shadow: 10px 10px 9px -4px rgba(0, 0, 0, 0.75);
-    margin-bottom: 10px;
-    /* border-radius: 10px; */
+    margin-bottom: 5px;
+}
+
+.textContacts {
+    color: white;
+    font-size: 20px;
+
+}
+
+.pagesBg {
+    background-color: #2F2F2F;
+    font-family: 'Source Serif Pro', Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .leftBar {
-    background: rgba(0, 212, 255, 1);
+    /* background: none; */
 }
 
-.rightBar {
-    background: rgba(0, 212, 255, 1);
+.careerBlock {
+    border-left: #284463 solid 3px;
+    margin-left: 10px;
+    padding-left: 5px;
+}
+
+.rightTitles {
+    width: fit-content;
+    font-size: 24px;
+    font-weight: bold;
+    color: #284463;
+    background: none;
+    border: none;
 }
 
 th,
 td {
     text-align: start;
     text-justify: center;
-    margin: 0px 5px;
-    padding: 5px 5px;
+    margin: 0px 10px;
+    padding: 5px 10px;
     border-collapse: collapse;
     border-radius: 10px;
-
-
 }
 
-h2 {
-    border: solid #999 2px;
-    background-color: #999;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-    background-color: #1a1c1e;
-}
 
 .gradBg {
-    background: linear-gradient(90deg, rgba(239, 239, 246, 1) 0%, rgba(41, 221, 197, 1) 41%, rgba(0, 212, 255, 1) 100%);
+    background-color: white;
+}
+
+.leftBlock {
+    border: solid 1px rgba(211, 211, 211, 0.358);
+    background: white;
+    padding: 10px;
+    box-shadow: 10px 10px 9px -4px rgba(0, 0, 0, 0.75);
+    margin-bottom: 10px;
+}
+
+.rightBlock {
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 10px 10px 9px -4px rgba(0, 0, 0, 0.75);
+    margin-bottom: 10px;
+}
+
+
+.contactBlock {
+    padding: 10px;
+    border-radius: 10px;
+    background: #284463;
+    /* background-image: linear-gradient(rgba(63, 28, 202, 0.5), rgba(24, 24, 228, 0.5)), url('/public/images/pexels-claudio-mota-105200226-9930098.jpg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 10px 10px 9px -4px rgba(0, 0, 0, 0.75);
+    margin-bottom: 10px;
+    color: white;
+    border: solid 1px rgba(211, 211, 211, 0.358);
+
+
+}
+
+.loadingBg {
+    background: linear-gradient(90deg, rgba(239, 239, 246, 1) 0%, rgba(41, 221, 197, 1) 45%, rgba(0, 212, 255, 1) 100%);
+    color: linear-gradient(90deg, rgba(239, 239, 246, 1) 0%, rgba(41, 221, 197, 1) 45%, rgba(0, 212, 255, 1) 100%);
+}
+
+.buttons {
+    border: solid white 2px;
+    color: white;
 }

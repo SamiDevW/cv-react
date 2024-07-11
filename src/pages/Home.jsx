@@ -8,6 +8,8 @@ import Formation from '../components/Formation'
 import RingLoader from "react-spinners/RingLoader";
 
 
+
+
 const url = "https://cv-react-api.onrender.com/contact"
 export default function Home() {
     const color = 'white'
@@ -31,39 +33,39 @@ export default function Home() {
     return (
         // if loading is true "loading ?"  then do what is after ':'
         <div>
-
-            {
-                loading ?
-                    <div className='gradBg flex justify-center items-center w-full h-screen '>
+            {loading ?
+                <div className='loadingBg flex justify-center items-center w-full h-screen '>
+                    <div>
 
                         <RingLoader
                             color={color}
                             loading={loading}
-                            // cssOverride={override}
                             size={150}
                             aria-label="Loading Spinner"
                             data-testid="loader"
                         />
+                        <p className='text-white text-center font-bold'>IMPORTING DATA...</p>
                     </div>
-                    :
+                </div>
+                :
 
-                    <div className='gradBg text-black flex flex-col'>
+                <div className='pagesBg text-black flex flex-col'>
 
-                        <section className=' '>
-                            <Contact />
+                    <section className='contactBlock  border-gray-900 border-2 p-2 m-2 '>
+                        <Contact />
+                    </section>
+                    <div className='flex'>
+                        <section className='leftBlock   ml-3  w-1/4 p-1  rounded-lg h-fit'>
+                            <Competences />
+                            <Langues />
+                            <Interets />
                         </section>
-                        <div className='flex'>
-                            <section className='  ml-3 secondaryBg w-1/4 p-1  rounded-lg h-fit'>
-                                <Competences />
-                                <Langues />
-                                <Interets />
-                            </section>
-                            <section className='  ml-3 w-3/4 mr-3'>
-                                <Formation />
-                                <Profesionelle />
-                            </section>
-                        </div>
-                    </div>}
+                        <section className='rightBlock  ml-3 w-3/4 mr-3'>
+                            <Formation />
+                            <Profesionelle />
+                        </section>
+                    </div>
+                </div>}
 
         </div>
     )

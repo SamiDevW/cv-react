@@ -24,24 +24,20 @@ export default function Profesionelle() {
     return (
         <div className=''>
             <h2
-                className='rightBar text-center w-auto py-2'>
+                className='rightTitles  py-2'>
                 Experiences profesionelles
             </h2>
-            <div>
+            <div className='careerBlock'>
 
                 {experiences && experiences.map((x) => (
-                    <div key={x._id} className='mb-2 secondaryBg '>
+                    <div key={x._id} className='  '>
                         <tr>
-                            <th>Année: </th>
+                            <td className='font-bold'>{x.company}</td>
+                        </tr>
+                        <tr>
                             <td>{x.year}</td>
-
                         </tr>
                         <tr>
-                            <th>Entreprise: </th>
-                            <td>{x.company}</td>
-                        </tr>
-                        <tr>
-                            <th>Mission: </th>
                             <td>{x.mission}</td>
                         </tr>
                     </div>
