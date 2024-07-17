@@ -1,0 +1,1 @@
+export const url = "https://cv-react-api.onrender.com/"

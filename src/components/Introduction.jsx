@@ -1,13 +1,12 @@
 
 import React, { useEffect, useState } from 'react'
-const url = 'https://cv-react-api.onrender.com/introduction'
-
+import { url } from '../Config/Config';
 
 export default function Introduction() {
   const [intro, setIntro] = useState([])
   async function fetchIntro() {
     try {
-      const response = await fetch(url)
+      const response = await fetch(url + 'introduction')
       if (response.ok) {
 
         const data = await response.json()

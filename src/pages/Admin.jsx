@@ -30,20 +30,18 @@ export default function Admin() {
         )
     }
     return (
-        <div className='gradBg text-black flex flex-col '>
+        <div className='pagesBg text-white flex flex-col '>
             <section className='contactBlock  border-gray-900 border-2 p-2 m-2'>
                 <AdminContact />
             </section>
-            <section className='flex'>
-                <section className='leftBlock   ml-3  w-1/4 p-1  rounded-lg h-fit'>
+            <section className='flex justify-center'>
+            <div className='flex careerBlock flex-col justify-center w-1/2'>
                     <AdminCompetences />
                     <AdminLangues />
                     <AdminInterets />
-                </section>
-                <section className='rightBlock  ml-3 w-3/4 mr-3'>
                     <AdminFormation />
                     <AdminExperience />
-                </section>
+            </div>
             </section>
 
         </div>
